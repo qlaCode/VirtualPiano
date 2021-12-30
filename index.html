@@ -80,7 +80,7 @@
 
         document.addEventListener("keydown", function(e) {
             if (pianoKeys.includes(e.key)) {
-                new Audio(`/Virtual Piano/task/src/sounds/${e.key}.mp3`).play()
+                new Audio(`/Virtual%20Piano/task/src/sounds/${e.key}.mp3`).play()
             } else{
                 console.warn("The key '"+ e.key.toUpperCase() +"' is not linked with the piano.");
             }
