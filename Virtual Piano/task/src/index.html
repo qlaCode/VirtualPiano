@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+
+        <meta charset="utf-8">
+        <title>Virtual Piano</title>
+
+        <style>
+
+           body{
+               background-color: green;
+           }
+
+           .container{
+               display: flex;
+               justify-content: center;
+               margin: 11% auto;
+               width: auto;
+           }
+
+           .white-keys kbd{
+               background-color: white;
+               border-color: grey;
+               border-style: solid;
+               border-width: 2px;
+               display: inline-block;
+               height: 30px;
+               padding-top: 170px;
+               position: relative;
+               text-align: center;
+               width: 50px;
+           }
+
+           .black-keys kbd{
+               background-color: black;
+               border-color: grey;
+               border-style: solid;
+               border-width: 2px;
+               color: white;
+               display: inline-block;
+               height: 150px;
+               left: -380px;
+               margin-left: 5px;
+               position: relative;
+               text-align: center;
+               top:0;
+               width: 50px;
+           }
+        </style>
+
+    </head>
+
+    <body>
+
+        <div class="container">
+            <div class="white-keys">
+                <kbd>A</kbd>
+                <kbd>S</kbd>
+                <kbd>D</kbd>
+                <kbd>F</kbd>
+                <kbd>G</kbd>
+                <kbd>H</kbd>
+                <kbd>J</kbd>
+            </div>
+            <div class="black-keys">
+                <kbd>W</kbd>
+                <kbd>E</kbd>
+                <kbd style="margin-left: 50px">T</kbd>
+                <kbd>Y</kbd>
+                <kbd>U</kbd>
+            </div>
+        </div>
+
+    <script>
+
+        //const myKeys = document.querySelectorAll("kbd");
+
+        const pianoKeys = ["a", "s", "d", "f", "g", "h", "j", "w", "e", "t", "y", "u"];
+
+        document.addEventListener("keydown", function(e) {
+            if (pianoKeys.includes(e.key)) {
+                new Audio(`sounds/${e.key}.mp3`).play()
+            } else{
+                console.warn("The key '"+ e.key.toUpperCase() +"' is not linked with the piano.");
+            }
+        });
+
+        // LINKS
+        // https://developer.mozilla.org/en-US/docs/Web/API/Element/querySelectorAll
+        // https://www.w3schools.com/js/js_switch.asp
+        //
+        // make a Switch logic and show result based on the 7 keys, make an Else for the warning
+        // Make an Array of kbd? Make a loop?
+        //
+        // UNUSED
+        // let audio = document.createElement("AUDIO");
+        // let src = audio.src;
+        // src = "'"+'sounds/'+ e.key.toUpperCase() +'.mp3'+"'";
+        // console.log(src);
+        //
+
+    </script>
+
+    </body>
+
+</html>
